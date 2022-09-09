@@ -4,6 +4,8 @@
   "description": "Nossa biblioteca do curso de js com TDD na prática",
   "main": "index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "yarn lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/Antoniopedromuteka/js-tdd-course/issues"
   },
-  "homepage": "https://github.com/Antoniopedromuteka/js-tdd-course#readme"
+  "homepage": "https://github.com/Antoniopedromuteka/js-tdd-course#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^8.0.1"
+  }
 }
