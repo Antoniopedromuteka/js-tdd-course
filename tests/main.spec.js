@@ -42,10 +42,10 @@
 
 describe("Main", function(){
 
+    var arr;
     //roda uma vez, antes do bloco    
     before(function(){
-
-        console.log("Before");
+        
 
     });
 
@@ -53,7 +53,6 @@ describe("Main", function(){
     //roda uma ver, depois do bloco
     after(function(){
 
-        console.log("after");
 
 
     })
@@ -61,29 +60,45 @@ describe("Main", function(){
     // roda todas as vezes antes de cada bloco
     beforeEach(function(){
 
-        console.log("BeforeEach");
+         arr = [1,2,3];
+ 
 
     });
 
     // roda todas as vezes depois de cada bloco
     afterEach(function(){
-
-        console.log("afterEach");
+ 
 
     })
 
+  
 
-    it("test 1", function(){
-        console.log("test 1");
+    it("should have a size of 4 when push another value to the array", function(){
+        
+
+        arr.push(4);
+
+        console.log(arr.length); //4
+
+    });
+
+
+    it("should have a size 2 when pop a value from the array", function(){  
+ 
+
+        arr.pop();
+
+        console.log(arr.length);
 
     });
 
+    it("should remove the value 3 when use pop in the array",function(){
 
-    it("test 2", function(){
+      
 
-        console.log("test 2 ");
+        console.log(arr.pop()===3);
 
-    });
+    })
 
 
 
