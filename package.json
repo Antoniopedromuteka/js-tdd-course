@@ -6,8 +6,10 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "yarn lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
   },
+ 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Antoniopedromuteka/js-tdd-course.git"
@@ -25,7 +27,7 @@
   "homepage": "https://github.com/Antoniopedromuteka/js-tdd-course#readme",
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^7.2.0",
+    "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "husky": "^8.0.1",
