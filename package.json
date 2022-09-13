@@ -5,8 +5,17 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "yarn lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js"
+    "prepush": "yarn lint && npm run test:coverage",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc":{
+    "function": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
   },
   "repository": {
     "type": "git",
@@ -25,10 +34,11 @@
   "homepage": "https://github.com/Antoniopedromuteka/js-tdd-course#readme",
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^7.2.0",
+    "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "husky": "^8.0.1",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0"
   }
 }
